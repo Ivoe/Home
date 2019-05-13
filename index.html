@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Original code by Emily !66666666Ok (https://github.com/E66666666/homepage)
+	Additions by Naharamas (https://github.com/naharamas/homepageDX)
+-->
+<html>
+<head>
+	<title>IVOME</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="icon" sizes="512x512" href="img/ico.png">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/html.sortable.js"></script>
+	<script src="js/moment-with-locales.min.js"></script>
+	<script src="js/rss.js"></script>
+	<!-- Replace FeedEk.js by FeedEX.js to use a local proxy(or whatever you set up in vars.js) instead of a third-party service -->
+	<script src="js/FeedEk.js"></script>
+	<script src="js/jquery.simplerWeather.min.js"></script>
+	<script src="js/suncalc.js"></script>
+</head>
+
+<body onresize="sizeCheck();">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none">
+		<filter id="blur">
+			<!-- You can increase stdDeviation to get a bigger blur effect. -->
+			<feGaussianBlur stdDeviation="5" /> 
+			<feComponentTransfer>
+				<feFuncA type="discrete" tableValues="1 1"/>
+			</feComponentTransfer>
+		</filter>
+	</svg>
+	
+	<div class="bg" id="bg"></div>
+	
+	<div id="hiddenButtons">
+		<button class="nextBG" onclick="selectNextBackground();"></button>
+		<select class="themeSelector" onchange="changeTheme();"></select>
+        <button class="blurButton" style="cursor: pointer;" onclick="toggleBlur();">blur</p>
+	</div>
+	
+	<div id="center">
+		<div class="searchContainer">
+			<div class="dotstyle dotstyle-fillup">
+				<ul>
+					<li id="dot_0" onclick="selectSearch(0);" class="current" ><a href="#">DuckDuckGo</a></li>
+					<li id="dot_1" onclick="selectSearch(1);"><a href="#">YouTube</a></li>
+					<li id="dot_2" onclick="selectSearch(2);"><a href="#">Wikipedia</a></li>
+				</ul>
+			</div>
+			<form class="searchForm search_0 searchView" method="get" action="https://www.duckduckgo.com/">
+				<input class="searchBar search_0_i search_duckduckgo" type="text" name="q" placeholder="DuckDuckGo" autofocus="autofocus" search_/>
+			</form>
+			<form class="searchForm search_1" method="get" action="https://youtube.com/results">
+				<input class="searchBar search_1_i search_youtube" type="text" name="search_query" placeholder="YouTube" search_/>
+			</form>
+			<form class="searchForm search_2" method="get" action="https://en.wikipedia.org/w/index.php">
+				<input class="searchBar search_2_i search_wikipedia" type="text" name="search" placeholder="Wikipedia" search_/>
+			</form>
+		</div>
+
+		<div class="d1x1" id="favbox1">
+			<h1 class="bracket"></h1>
+			<ul class="sortable fav-connected"></ul>
+		</div>
+
+		<div class="d2x1" id="todo">
+			<h1 class="bracket">Notes</h1>
+			<textarea id="todobox" name="comments"></textarea>
+		</div>
+
+		<div class="d1x1" id="favbox2">
+			<h1 class="bracket"></h1>
+			<ul class="sortable fav-connected"></ul>
+		</div>
+
+		<div class="d1x1" id="favbox3">
+			<h1 class="bracket"></h1>
+			<ul class="sortable fav-connected"></ul>
+		</div>
+
+		<div class="d1x1" id="favbox4">
+			<h1 class="bracket"></h1>
+			<ul class="sortable fav-connected"></ul>
+		</div>
+		
+		<div class="d1x1" id="favbox5">
+			<h1 class="bracket"></h1>
+			<ul class="sortable fav-connected"></ul>
+		</div>
+
+		<div class="d1x1" id="favbox6">
+			<h1 class="bracket"></h1>
+			<ul class="sortable fav-connected"></ul>
+		</div>
+	</div>
+
+	<div id="hiddenButtonsRight">
+		<button class="editButton" onclick="editToggle();"></button>
+	</div>
+
+	<div id="header">
+			<div class="top" id="weatherContainer" onclick="toggleVisibility('weatherContainer', 'title');" style="cursor: pointer;">
+				<div id="weather"></div>
+				<div id="weather2"></div>
+			</div>
+			<div class="top" id="title">
+				<p id ="titletext" class="bracket" onclick="loadWeather(); toggleVisibility('title', 'weatherContainer');" style="cursor: pointer;">Welcome!</p>
+			</div>
+		</div>
+
+	<div id="bottom-margin"></div>
+</body>
+
+<!-- Afterload scripts -->
+<script src="js/vars.js"></script>
+<script src="js/background.js"></script>
+<script src="js/search.js"></script>
+<script src="js/favboxes.js"></script>
+<script src="js/header.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/scripts.js"></script>
+
+</html>

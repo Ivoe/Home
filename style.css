@@ -1,0 +1,635 @@
+/*
+ *	Original code by Emily !66666666Ok (https://github.com/E66666666/homepage)
+ *  Additions by Naharamas (https://github.com/naharamas/homepageDX)
+ */
+ 
+/*
+ *	Sort of reset and general styling
+ */
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 8pt;
+}
+
+::-webkit-scrollbar-track
+{
+	background:none;
+}
+
+::-webkit-scrollbar
+{
+	width: 3px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 1px;
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.4);
+	background-color: #666;
+}
+
+li, ul{
+	list-style-type: none;
+}
+
+p { 
+	color: #99aab5;
+}
+
+a {
+	color: #99aab5;
+	text-decoration: none;
+}
+
+input:focus, select:focus, textarea:focus, button:focus
+{
+	outline:0 !important;
+}
+
+/* Bookmarks links effect */
+div.d1x1 .button
+{
+	color: #99aab5;
+	cursor: pointer; cursor: hand;
+	font-size: 8pt;
+	letter-spacing: 1;
+	transition: 0.2s ease-in; 
+}
+div.d1x1 .button:hover
+{
+	font-size: 8pt;
+	line-height: 0.9;
+	transition: 0.2s ease-out;
+}
+
+div.d1x1 a:link
+{
+	font-size: 8pt;
+	line-height: 1;
+	transition: 0.2s ease-in; 
+}
+div.d1x1 a:hover
+{
+	font-size: 8pt;
+	line-height: 0.9;
+	transition: 0.2s ease-out;
+}
+
+/* Feeds links effect */
+div.d2x1Child a:link
+{
+	border-bottom: 1px solid rgba(192, 192, 192, 0);
+	transition: 0.2s ease-in; 
+}
+div.d2x1Child a:hover
+{
+	border-bottom: 1px solid rgba(192, 192, 192, 1);
+	transition: 0.2s ease-out;
+}
+
+#junkbox {
+	position: absolute;
+	right: 0px;
+	top: 30px;
+	color: #99aab5;
+}
+
+#hiddenButtonsRight {
+	position: absolute;
+	right: 0px;
+	top: 0;
+}
+
+.editButton, .resetButton {
+	float:right;
+	width: 22px;
+	height: 22px;
+	margin-top: 5px;
+	margin-right: 5px;
+	background: transparent;
+	border: 0px solid #ccc;
+	transition: 0.2s ease-out;
+	cursor: pointer;
+}
+.resetButton {
+	color: grey;
+}
+.editButton:hover {
+	background-color: rgba(0,153,204,0.2);
+	transition: 0.2s ease-in;
+}
+.resetButton:hover {
+	background-color: rgba(0,153,204,0.2);
+	transition: 0.2s ease-in;
+}
+
+#hiddenButtons {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.nextBG, .blurButton {
+	float:left;
+	width: 22px;
+	height: 22px;
+	margin-top: 5px;
+	margin-left: 5px;
+	background: transparent;
+	border: 0px solid #ccc;
+	transition: 0.2s ease-out;
+	cursor: pointer;
+}
+.blurButton {
+	padding: 2px;
+	width: auto;
+	font-size: 16px;
+	color: transparent;
+}
+.nextBG:hover, .blurButton:hover {
+	background-color: rgba(192,192,192,0.33);
+	transition: 0.2s ease-in;
+}
+.blurButton:hover {
+	color: #23272a;
+}
+
+.themeSelector {
+	float:left;
+	width: auto;
+	margin-top: 5px;
+	margin-left: 5px;
+	padding: 2px;
+	font-size: 16px;
+	color: transparent;
+	background: transparent;
+	border: 0px solid #23272a;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: none; /* remove the value that chrome does not use */
+	transition: 0.2s ease-out;
+	cursor: pointer;
+}
+.themeSelector:hover {
+	color: #23272a;
+	background-color: rgba(192,192,192,0.33);
+	transition: 0.2s ease-in;
+}
+option {
+	color: #23272a;
+	background-color: #555;
+}
+
+/* Surrounding brackets on header hovering */
+.bracket:active,
+.bracket:focus {
+	outline: none;
+}
+.bracket::before,
+.bracket::after{
+	display: inline-block;
+	opacity: 0;
+	transition: transform 0.3s, opacity 0.2s;
+}
+.bracket::before{
+	margin-right: 5px;
+	content: '∞';
+	transform: translateX(8px);
+}
+.bracket::after{
+	margin-left: 5px;
+	content: '∞';
+	transform: translateX(-8px);
+}
+.bracket:hover::before,
+.bracket:hover::after{
+	opacity: 1;
+	transform: translateX(0px);
+}
+
+h1 {
+	margin: 0.45em;
+	white-space: nowrap;
+	color: #99aab5;
+	font-weight: normal;
+	font-size: 10pt;
+}
+
+#center {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.bg{
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: #23272a;
+	position: fixed;
+}
+
+#bottom-margin{
+	clear: both;
+	height: 0px;
+}
+
+/*
+ *	Header styling
+ */ 
+#title{
+	word-break: break-all;
+	font-size: 24pt;
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+	line-height: 40px;
+}
+
+.top{
+	height: 100px;
+	transition: height 1s;
+}
+
+.top p{
+	display: inline
+}
+
+#weather2{
+	text-align: right;
+	float: right;
+}
+
+/*
+ *	Search
+ */
+
+.searchContainer {
+	text-align: center;
+	margin-bottom: 10pt;
+}
+
+.searchForm {
+	overflow: hidden;
+	transition: height 0.3s;
+	height: 0;
+}
+
+.searchBar {
+	box-sizing: border-box;
+	height: 32pt;
+	max-width: 95%;
+	font-size: 22pt;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.1);
+	color: transparent;
+	text-shadow: 0 0 0 white;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: background-color 0.3s;
+}
+.searchBar::placeholder {
+	text-shadow: none;
+}
+
+
+.searchBar:focus {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.searchView {
+	height: 28pt;
+}
+
+/*
+ *	Search dots
+ */
+.dotstyle {
+	margin-top: 20px;
+}
+
+.dotstyle ul {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: default;
+}
+
+.dotstyle li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 16px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	background-color: #23272a;
+	background-color: rgba(255,255,255,0.3);
+	text-indent: -999em;
+	cursor: pointer; /* make the text accessible to screen readers */
+	position: absolute;
+}
+
+.dotstyle-fillup li a {
+	overflow: hidden;
+	background-color: rgba(0,0,0,0);
+	box-shadow: inset 0 0 0 2px rgba(255,255,255,1);
+	transition: background 0.3s;
+}
+
+.dotstyle-fillup li a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	height: 0;
+	left: 0;
+	width: 100%;
+	border-radius: 50% !important;
+	background-color: #23272a;
+	box-shadow: 0 0 1px #23272a;
+	transition: height 0.3s;
+}
+
+.dotstyle-fillup li a:hover,
+.dotstyle-fillup li a:focus {
+	background-color: rgba(0,0,0,0.2);
+}
+
+.dotstyle-fillup li.current a::after {
+	height: 100%;
+}
+
+/*
+ *	Link boxes
+ */
+.d1x1 {
+	text-align: center;
+	height: 190px;
+	width: 190px;
+	margin: 5px;
+	float: left;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: background-color 2s;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
+} 
+
+.d1x1:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+	transition: background-color 1s;
+}
+
+.d2x1 {
+	float: left;
+	width: 390px;
+	height: 190px;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	margin: 5px;
+	transition: background-color 2s;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
+}
+
+.d2x1:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: background-color 1s;
+}
+
+.d2x1Child {
+	width: 100%;
+	overflow: auto;
+	height: calc(100% - 42%);
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.d2x2 {
+	float: left;
+	width: 390px;
+	height: 290px;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	margin: 5px;
+	transition: background-color 2s;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
+}
+
+.d2x2:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: background-color 1s;
+}
+
+.d2x2Child {
+	width: 100%;
+	overflow: auto;
+	height: calc(100%);
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.feedEkList{
+	display: block;
+}
+
+div.d2x1Child .itemDate {
+	text-align: center;
+	color: #99aab5;
+}
+
+#todobox {
+	width: calc( 100% - 20px );
+	height: calc( 100% - 76px );
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: rgba(0,0,0,0.1);
+	color: #99aab5;
+	border: 0px;
+	resize: none;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10pt;
+	transition: 0.2s ease-in;
+}
+
+#todobox:hover, #todobox:focus {
+	background-color: rgba(0,0,0,0.3);
+	transition: 0.5s ease-in;
+}
+
+.d4x2 {
+	float: left;
+	width: 790px;
+	height: 100%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 5px;
+	transition: background-color 2s;
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.2);
+	box-sizing: border-box;
+}
+
+.d4x2:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: background-color 1s;
+}
+
+.bigFeed {
+	display: none;
+	text-align: center;
+}
+.bigFeedContent {
+	margin: 2%;
+}
+.bigFeedContent .itemDate {
+	display: none;
+}
+
+#weatherContainer{
+	width: 66%;
+	margin: auto;
+	height: 0px;
+	overflow: hidden;
+}
+
+#weather, #weather2{
+	display: inline-block;
+	margin-top: 10px;
+	width: auto;
+	font-size: 18pt;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+#weather2{
+	float: right;
+	margin-right: 5px;
+}
+
+/*
+ *	Responsive!
+ */
+
+@media screen and (min-width: 840px){
+	#title {
+		line-height: 40px;
+		height: 40px;
+	} 
+}
+ 
+@media screen and (max-width: 840px){
+	html {
+		font-size: 12pt;
+	}
+	
+	.center {
+		width: 400px;
+	}
+	
+	.d4x2 {
+		width: 392px;
+	}
+	
+	.top {
+		height: 40px;
+	}
+	
+	#title {
+		line-height: 40px;
+		height: 40px;
+	}
+	
+	.d1x1 a, .itemTitle a
+	{
+		line-height: 24px;
+	}
+
+	#weather, #weather2 {
+		font-size: 12pt;
+		width: auto;
+		float: left;
+	}
+	
+	#weather2 {
+		float: right;
+	}
+	
+	img {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 420px){	
+	.center {
+		width: 100%;
+	}
+
+	.d1x1 {
+		width: 48%;
+		padding-bottom: 2%;
+		margin: 1%;
+		float: left;
+		overflow: hidden;
+		transition: background-color 2s;
+	} 
+	
+	
+	.d2x1 {
+		margin: 1%;
+		width: 98%;
+	}
+	
+	.d2x1Child {
+		width: 100%;
+		height: calc(100% - 50%);
+		padding: 0;
+	}
+		
+	.d4x2 {
+		margin: 1%;
+		width: 98%;
+	}
+	
+	#title {
+		line-height: 300px; 
+		height: 40px;
+	}
+
+	.searchBar {
+		height: 20pt;
+		font-size: 16pt;
+	}
+
+	.searchView {
+		height: 20pt !important;
+	}
+}
