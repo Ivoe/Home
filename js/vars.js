@@ -22,12 +22,12 @@ var defaultTheme = "pixel";
 // Default settings for the links, used whenever local storage is empty or unavailable.
 var defaultFavboxes = {};
 defaultFavboxes["favbox1"] = {title:"Social", items:[
-	{link:"https://twitter.com/real_ivo_", label:"Twitter"}, 
-	{link:"https://www.facebook.com/", label:"Facebook"}, 
+	{link:"https://twitter.com/ivoe_", label:"Twitter"}, 
+	{link:"https://www.facebook.com/ivoeZ", label:"Facebook"}, 
 	{link:"https://discordapp.com/", label:"Discord"},
-	{link:"https://steamcommunity.com/id/realIVO0/", label:"Steam"},
-	{link:"https://www.instagram.com/real_ivo_/", label:"Instagram"},
-	{link:"https://www.reddit.com/", label:"Reddit"}]};
+	{link:"https://steamcommunity.com/id/ivoe_/", label:"Steam"},
+	{link:"https://www.instagram.com/_ivoe_/", label:"Instagram"},
+	{link:"https://www.reddit.com/user/ivoe_", label:"Reddit"}]};
 
 defaultFavboxes["favbox2"] = {title:"Media", items:[
 	{link:"https://www.watchcartoononline.io/", label:"Anime Online"},
