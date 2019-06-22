@@ -1,3 +1,5 @@
+//Not my Code just edits. search homepage for more examples just use your own links its creepy if your following me this hard c:
+//e3
 var birthMonth = 7;
 var birthDay = 24;
 
@@ -27,46 +29,48 @@ defaultFavboxes["favbox1"] = {title:"Social", items:[
 	{link:"https://discordapp.com/", label:"Discord"},
 	{link:"https://steamcommunity.com/id/ivoe_/", label:"Steam"},
 	{link:"https://www.instagram.com/_ivoe_/", label:"Instagram"},
-	{link:"https://www.reddit.com/user/ivoe_", label:"Reddit"}]};
+	{link:"https://www.reddit.com/user/ivoe_", label:"Reddit"}
+	]};
 
 defaultFavboxes["favbox2"] = {title:"Media", items:[
-	{link:"https://www.watchcartoononline.io/", label:"Anime Online"},
-	{link:"https://www.primewire.cx/", label:"Prime Movies"},
+	{link:"https://animekisa.tv/dubbed", label:"Anime"},
+	{link:"https://www.primewire.cx/", label:"Movies"},
 	{link:"https://www.twitch.tv/", label:"Twitch"}, 
 	{link:"http://imgur.com", label:"Imgur"},
-	{link:"https://9anime.to/", label:"9Anime"},
-	{link:"https://azmovies.xyz", label:"A-Z List"},
-	{link:"https://www.youtube.com/", label:"YouTube"}]};
+	{link:"https://www.youtube.com/", label:"YouTube"}
+	]};
 
 defaultFavboxes["favbox3"] = {title:"Misc", items:[ 
 	{link:"https://aka.my/user", label:"Aka Links"},
 	{link:"http://192.168.1.1/", label:"Router"},
 	{link:"http://www.thesaurus.com/", label:"Thesaurus"},
 	{link:"https://www.urbandictionary.com/", label:"urban Dictionary"},
-	{link:"http://www.dictionary.com/", label:"Dictionary"},
-	{link:"http://192.168.0.254/", label:"Freebox"}]};
+	{link:"http://www.dictionary.com/", label:"Dictionary"}
+	]};
 
 defaultFavboxes["favbox4"] = {title:"Download", items:[
-	{link:"https://torrentfreak.com/", label:"TorrentFreak"}, 
-	{link:"https://rutracker.org/forum/index.php", label:"Rutracker"},
-	{link:"http://outlook.com", label:"outlook"}, 
-	{link:"https://www.techsupportalert.com", label:"Download Repo"}]};
+	{link:"https://www.xda-developers.com/", label:"Xda-Dev"},
+	{link:"https://github.com/ScrPits/", label:"Github"},
+	{link:"https://github.com/ScrPits/IVOME", label:"Source Code"}
+	]};
 
 defaultFavboxes["favbox5"] = {title:"Boards", items:[
 	{link:"https://www.reddit.com/", label:"Reddit"}, 
 	{link:"https://www.se7ensins.com/", label:"SevenSins"}, 
 	{link:"https://www.thetechgame.com/", label:"TechGame"},
-	{link:"https://www.xda-developers.com/", label:"Xda-Dev"},
 	{link:"https://boards.4chan.org/", label:"4Chan"},
-	{link:"http://myanimelist.net/", label:"AnimeList"}]};
+	{link:"http://myanimelist.net/", label:"AnimeList"}
+	]};
 
 defaultFavboxes["favbox6"] = {title:"Work", items:[
-	{link:"https://www.gmx.com/", label:"Gmx"}, 
+	{link:"https://www.gmx.com/", label:"Gmx"},
+	{link:"http://outlook.com", label:"outlook"}, 
 	{link:"https://www.twitch.tv/ivoe/dashboard/", label:"Twitch"},
 	{link:"https://bot.smokey.wtf/?p=dashboard", label:"SmokeyBot"},
 	{link:"https://streamlabs.com/dashboard#/stats", label:"StreamLabs"},
 	{link:"https://account.skrill.com/wallet/ng/dashboard", label:"Skrill $"},
-	{link:"https://www.Indeed.com/", label:"Indeed"}]};
+	{link:"https://www.Indeed.com/", label:"Indeed"}
+	]};
 
 var newsFeeds = [];
 newsFeeds["GameInfo"] = {
