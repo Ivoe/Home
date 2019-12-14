@@ -1,126 +1,95 @@
-<!DOCTYPE HTML>
-<!--
-	Original code by Emily !66666666Ok (https://github.com/E66666666/homepage)
-	Additions by Naharamas (https://github.com/naharamas/homepageDX)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>IVOME</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="icon" sizes="512x512" href="img/ico.png">
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-	<link href="style.css" rel="stylesheet" type="text/css">
-
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/html.sortable.js"></script>
-	<script src="js/moment-with-locales.min.js"></script>
-	<script src="js/rss.js"></script>
-	<!-- Replace FeedEk.js by FeedEX.js to use a local proxy(or whatever you set up in vars.js) instead of a third-party service -->
-	<script src="js/FeedEk.js"></script>
-	<script src="js/jquery.simplerWeather.min.js"></script>
-	<script src="js/suncalc.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="resource/css/styles.css">
+    <script src="resource/js/script.js"></script>
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
 </head>
-
-<body onresize="sizeCheck();">
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display:none">
-		<filter id="blur">
-			<!-- You can increase stdDeviation to get a bigger blur effect. -->
-			<feGaussianBlur stdDeviation="5" /> 
-			<feComponentTransfer>
-				<feFuncA type="discrete" tableValues="1 1"/>
-			</feComponentTransfer>
-		</filter>
-	</svg>
-	
-	<div class="bg" id="bg"></div>
-	
-	<div id="hiddenButtons">
-		<button class="nextBG" onclick="selectNextBackground();"></button>
-		<select class="themeSelector" onchange="changeTheme();"></select>
-        <button class="blurButton" style="cursor: pointer;" onclick="toggleBlur();">blur</p>
-	</div>
-	
-	<div id="center">
-		<div class="searchContainer">
-			<div class="dotstyle dotstyle-fillup">
-				<ul>
-					<li id="dot_0" onclick="selectSearch(0);" class="current" ><a href="#">DuckDuckGo</a></li>
-					<li id="dot_1" onclick="selectSearch(1);"><a href="#">YouTube</a></li>
-					<li id="dot_2" onclick="selectSearch(2);"><a href="#">Wikipedia</a></li>
-				</ul>
-			</div>
-			<form class="searchForm search_0 searchView" method="get" action="https://www.duckduckgo.com/">
-				<input class="searchBar search_0_i search_duckduckgo" type="text" name="q" placeholder="DuckDuckGo" autofocus="autofocus" search_/>
-			</form>
-			<form class="searchForm search_1" method="get" action="https://youtube.com/results">
-				<input class="searchBar search_1_i search_youtube" type="text" name="search_query" placeholder="YouTube" search_/>
-			</form>
-			<form class="searchForm search_2" method="get" action="https://en.wikipedia.org/w/index.php">
-				<input class="searchBar search_2_i search_wikipedia" type="text" name="search" placeholder="Wikipedia" search_/>
-			</form>
-		</div>
-
-		<div class="d1x1" id="favbox1">
-			<h1 class="bracket"></h1>
-			<ul class="sortable fav-connected"></ul>
-		</div>
-
-		<div class="d2x1" id="todo">
-			<h1 class="bracket">Notes</h1>
-			<textarea id="todobox" name="comments"></textarea>
-		</div>
-
-		<div class="d1x1" id="favbox2">
-			<h1 class="bracket"></h1>
-			<ul class="sortable fav-connected"></ul>
-		</div>
-
-		<div class="d1x1" id="favbox3">
-			<h1 class="bracket"></h1>
-			<ul class="sortable fav-connected"></ul>
-		</div>
-
-		<div class="d1x1" id="favbox4">
-			<h1 class="bracket"></h1>
-			<ul class="sortable fav-connected"></ul>
-		</div>
-		
-		<div class="d1x1" id="favbox5">
-			<h1 class="bracket"></h1>
-			<ul class="sortable fav-connected"></ul>
-		</div>
-
-		<div class="d1x1" id="favbox6">
-			<h1 class="bracket"></h1>
-			<ul class="sortable fav-connected"></ul>
-		</div>
-	</div>
-
-	<div id="hiddenButtonsRight">
-		<button class="editButton" onclick="editToggle();"></button>
-	</div>
-
-	<div id="header">
-			<div class="top" id="weatherContainer" onclick="toggleVisibility('weatherContainer', 'title');" style="cursor: pointer;">
-				<div id="weather"></div>
-				<div id="weather2"></div>
-			</div>
-			<div class="top" id="title">
-				<p id ="titletext" class="bracket" onclick="loadWeather(); toggleVisibility('title', 'weatherContainer');" style="cursor: pointer;">Welcome!</p>
-			</div>
-		</div>
-
-	<div id="bottom-margin"></div>
+<body>
+    <div class="contain">
+        <div id="clock"></div>
+        <div class="weather-container">
+            <div class="row">
+                <div id="weather-description"class="inline"></div>
+                <div class="inline">-</div>
+                <div id="temp" class="inline"></div>
+            </div>
+        </div>
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Daily</div>
+                <div class="bookmark-inner-container">
+                    <!-- <a class="bookmark" href=" " target="_blank"> </a> -->
+                    <a class="bookmark" href="https://www.indeed.com" target="_blank">Indeed</a>
+                    <a class="bookmark" href="https://www.Mail.com" target="_blank">Mail</a>
+                    <a class="bookmark" href="https://mail.aol.com/webmail-std/en-us/suite#" target="_blank">Aol</a>
+                    <a class="bookmark" href="https://inbox.google.com/" target="_blank">Gmail</a>
+                    <a class="bookmark" href="https://www.gmx.com/" target="_blank">GMX</a>
+                    <a class="bookmark" href="http://outlook.com" target="_blank">Outlook</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Media</div>
+                <div class="bookmark-inner-container">
+                    <!-- <a class="bookmark" href=" " target="_blank"> </a> -->
+                    <a class="bookmark" href="https://animekisa.tv/dubbed" target="_blank">Anime</a>
+                    <a class="bookmark" href="https://www.watchcartoononline.io/" target="_blank">CartoOnline</a>
+                    <a class="bookmark" href="https://www.twitch.tv/" target="_blank">Twitch</a>
+                    <a class="bookmark" href="https://youtube.com" target="_blank">Youtube</a>
+                    <a class="bookmark" href="http://myanimelist.net/" target="_blank">Anime List</a>
+                    <a class="bookmark" href="http://imgur.com" target="_blank">imGur</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+            <div class="bookmark-title">Content</div>
+                <div class="bookmark-inner-container">
+                    <!-- <a class="bookmark" href="https://www.youtube.com/watch?v=qRj144Gd7EA" target="_blank">Motovation</a> -->
+                    <a class="bookmark" href="https://www.twitch.tv/ivoe/dashboard/" target="_blank">Ivoe.tv</a>
+                    <a class="bookmark" href="https://bot.smokey.wtf/?p=dashboard" target="_blank">Chat Bot</a>
+                    <a class="bookmark" href="https://streamlabs.com/dashboard#/stats" target="_blank">StreamLabs</a>
+                    <a class="bookmark" href="https://account.skrill.com/wallet/ng/dashboard" target="_blank">Donations</a>
+                    <a class="bookmark" href="https://github.com/ScrPits/" target="_blank">Github</a>
+                    <a class="bookmark" href="https://www.youtube.com/watch?v=qRj144Gd7EA" target="_blank">Motovation</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Social</div>
+                <div class="bookmark-inner-container">
+                    <!-- <a class="bookmark" href=" " target="_blank"> </a> -->
+                    <a class="bookmark" href="https://twitter.com/ivoe_" target="_blank">Twitter</a>
+                    <a class="bookmark" href="https://www.facebook.com/ivoeZ" target="_blank">Facebook</a>
+                    <a class="bookmark" href="https://www.instagram.com/_ivoe_/" target="_blank">Instagram</a>
+                    <a class="bookmark" href="https://www.reddit.com/user/ivoe_" target="_blank">Reddit</a>
+                    <a class="bookmark" href="https://discordapp.com/" target="_blank">Discord</a>
+                    <a class="bookmark" href="https://steamcommunity.com/id/ivoe_" target="_blank">Steam</a>
+                    <a class="bookmark" href="https://www.xda-developers.com/" target="_blank">XDA Dev</a>
+                    <a class="bookmark" href="https://www.se7ensins.com/" target="_blank">Se7enSins</a>
+                    <a class="bookmark" href="https://www.thetechgame.com/" target="_blank">TheTechGame</a>
+                    <a class="bookmark" href="https://boards.4chan.org/" target="_blank">4Chan</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Tools</div>
+                <div class="bookmark-inner-container">
+                    <!-- <a class="bookmark" href=" " target="_blank"> </a> -->
+                    <a class="bookmark" href="http://192.168.1.1/" target="_blank">Router</a>
+                    <a class="bookmark" href="https://bitcoinwisdom.io/markets/bitfinex/btcusd" target="_blank">Bitcoin</a>
+                    <a class="bookmark" href="http://www.dictionary.com/" target="_blank">Dictionary</a>
+                    <a class="bookmark" href="http://www.thesaurus.com/" target="_blank">Thesaurus</a>
+                    <a class="bookmark" href="https://www.urbandictionary.com/" target="_blank">Urban Dictionary</a>
+                    <a class="bookmark" href="https://www.isitdownrightnow.com/" target="_blank">is it down?</a>
+                    <a class="bookmark" href="https://aka.my/user" target="_blank">Short links</a>
+                <div class="bookmark-title">Bots</div>
+                    <a class="bookmark" href="https://mybot.run/forums" target="_blank">MyBot</a>
+                    <a class="bookmark" href="https://www.proshine-bot.com/" target="_blank">ProShine</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
-<!-- Afterload scripts -->
-<script src="js/vars.js"></script>
-<script src="js/background.js"></script>
-<script src="js/search.js"></script>
-<script src="js/favboxes.js"></script>
-<script src="js/header.js"></script>
-<script src="js/todo.js"></script>
-<script src="js/scripts.js"></script>
-
 </html>
