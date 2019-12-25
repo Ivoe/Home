@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Ultra');
+:root {
+  --bg: #131821;
+  --fg: #ffffff;
+  --secondaryFg: #b3b3b3;
+  --containerBg: #171717;
+  --searchBg: var(--containerBg);
+  --scrollbarColor: #3f3f3f;
+}
+
+body {
+  background-color: var(--bg);
+  margin: 0px;
+}
+
+.contain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#clock {
+  font-family: sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  font-family: 'Lobster';
+  color: var(--fg);
+  margin-bottom: 0.25em;
+  text-shadow: 0.0px 10.0px 0.02px #000, 9.8px 2.1px 0.02px #000, 4.2px -9.1px 0.02px #000, -8.0px -6.0px 0.02px #000, -7.6px 6.5px 0.02px #000, 4.8px 8.8px 0.02px #000, 9.6px -2.8px 0.02px #000, -0.7px -10.0px 0.02px #000, -9.9px -1.5px 0.02px #000, -3.5px 9.4px 0.02px #000, 8.4px 5.4px 0.02px #000, 7.1px -7.0px 0.02px #000, -5.4px -8.4px 0.02px #000, -9.4px 3.5px 0.02px #000, 1.4px 9.9px 0.02px #000, 10.0px 0.8px 0.02px #000, 2.9px -9.6px 0.02px #000, -8.7px -4.8px 0.02px #000, -6.6px 7.5px 0.02px #000, 5.9px 8.0px 0.02px #000, 9.1px -4.1px 0.02px #000, -2.1px -9.8px 0.02px #000, -10.0px -0.1px 0.02px #000, -2.2px 9.8px 0.02px #000, 9.1px 4.2px 0.02px #000, 6.1px -8.0px 0.02px #000, -6.5px -7.6px 0.02px #000, -8.8px 4.7px 0.02px #000, 2.7px 9.6px 0.02px #000, 10.0px -0.6px 0.02px #000, 1.5px -9.9px 0.02px #000, -9.3px -3.6px 0.02px #000, -5.5px 8.4px 0.02px #000, 7.0px 7.2px 0.02px #000, 8.5px -5.3px 0.02px #000, -3.4px -9.4px 0.02px #000, -9.9px 1.3px 0.02px #000, -0.8px 10.0px 0.02px #000, 9.6px 2.9px 0.02px #000, 4.9px -8.7px 0.02px #000, -7.5px -6.7px 0.02px #000, -8.1px 5.9px 0.02px #000, 4.0px 9.2px 0.02px #000, 9.8px -2.0px 0.02px #000, 0.2px -10.0px 0.02px #000, -9.7px -2.3px 0.02px #000, -4.3px 9.0px 0.02px #000, 7.9px 6.1px 0.02px #000
+}
+
+.weather-container {
+  width: 30%;
+  background-color: var(--containerBg);
+  padding: 1em;
+  border-radius: 3px;
+  font-family: 'Ultra';
+  color: var(--fg);
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 0   -1px 0 #000, 1px -1px 0 #000, 1px  0   0 #000, 1px  1px 0 #000, 0    1px 0 #000, -1px  1px 0 #000, -1px  0   0 #000;
+}
+.inline {
+  display: inline-block;
+}
+
+.bookmark-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0em;
+}
+
+@media only screen and (max-width: 100%) {
+  .contain {
+    height: auto;
+  }
+  #clock {
+    margin-top: 1em;
+  }
+  .container > .bookmark-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .bookmark-container > .bookmark-set {
+    width: auto;
+    margin: 1em 0em;
+  }
+}
+
+.bookmark-set {
+  padding: 1em;
+  background-color: var(--containerBg);
+  border-radius: 3px;
+  font-family: 'Roboto';
+  font-size: 0.85rem;
+  width: 20%;
+  height: 30em;
+  margin: 0em 0.5em;
+  box-sizing: border-box;
+}
+
+.bookmark-inner-container {
+  overflow-y: scroll;
+  height: 80%;
+  vertical-align: top;
+  padding-right: 6px;
+  box-sizing: border-box;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbarColor) #ffffff00;
+}
+
+.bookmark-inner-container::-webkit-scrollbar {
+  width: 6px;
+}
+.bookmark-inner-container::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+.bookmark-inner-container::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarColor);
+  border-radius: 6px;
+  border: 3px solid #ffffff00;
+}
+
+.bookmark-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--fg);
+  margin: 0em 0em 0.35em 0em;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 0   -1px 0 #000, 1px -1px 0 #000, 1px  0   0 #000, 1px  1px 0 #000, 0    1px 0 #000, -1px  1px 0 #000, -1px  0   0 #000;
+}
+.bookmark {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: var(--secondaryFg);
+  display: block;
+  margin: 0.5em 0em;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 0   -1px 0 #000, 1px -1px 0 #000, 1px  0   0 #000, 1px  1px 0 #000, 0    1px 0 #000, -1px  1px 0 #000, -1px  0   0 #000;
+}
+.bookmark:hover {
+  color: var(--fg);
+}
