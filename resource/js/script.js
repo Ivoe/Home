@@ -5,9 +5,9 @@
                 sec = date.getSeconds(),
                 hour = date.getHours();
 
-            return "" + 
-                (hour < 10 ? ("0" + hour) : hour) + ":" + 
-                (min < 10 ? ("0" + min) : min) + ":" + 
+            return "" +
+                (hour < 10 ? ("0" + hour) : hour) + ":" +
+                (min < 10 ? ("0" + min) : min) + ":" +
                 (sec < 10 ? ("0" + sec) : sec);
         }
 
@@ -31,16 +31,16 @@
             // Set up the clock
             document.getElementById("clock").innerHTML = getTime();
             // Set clock interval to tick clock
-            setInterval( () => {
+            setInterval(() => {
                 document.getElementById("clock").innerHTML = getTime();
-            },100);
+            }, 100);
         }
 
         document.addEventListener("keydown", event => {
-            if (event.keyCode == 32) {          // Spacebar code to open search
+            if (event.keyCode == 32) { // Spacebar code to open search
                 document.getElementById('search').style.display = 'flex';
                 document.getElementById('search-field').focus();
-            } else if (event.keyCode == 27) {   // Esc to close search
+            } else if (event.keyCode == 27) { // Esc to close search
                 document.getElementById('search-field').value = '';
                 document.getElementById('search-field').blur();
                 document.getElementById('search').style.display = 'none';
